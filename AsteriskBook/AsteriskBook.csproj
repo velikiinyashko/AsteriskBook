@@ -6,10 +6,21 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Asterisk\Controllers\" />
+    <Folder Include="Areas\Asterisk\Data\" />
+    <Folder Include="Areas\Asterisk\Models\" />
+    <Folder Include="Areas\Asterisk\Views\" />
+    <Folder Include="Areas\Cabinet\Data\" />
+    <Folder Include="Areas\Cabinet\Models\" />
   </ItemGroup>
 
 </Project>
