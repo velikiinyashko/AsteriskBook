@@ -1,0 +1,58 @@
+﻿@using AsteriskBook.Areas.Asterisk.Models
+@model IndexViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Cabinet/Views/Shared/_Cabinet.cshtml";
+}
+
+<h2>@DateTime.Today</h2>
+<h4>@Model.PageViewModel.TotalPages</h4>
+<form>
+    <div class="form-inline">
+        <input type="date" name="date" />
+        <input type="number" name="src" />
+        <input class="btn btn-primary" type="submit" value="Search" />
+    </div>
+</form>
+<table class="table table-striped">
+    <thead class="thead-default">
+        <tr>
+            <th>Call Date</th>
+            <th>Src</th>
+            <th>Dst</th>
+            <th>Path</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model.Cdrs)
+        {
+            <tr>
+                <td>@i.calldate</td>
+                <td>@i.src</td>
+                <td>@i.dst</td>
+                <td>
+                    <div class="form-inline">
+                        <audio preload="metadata" controls src="@string.Format(@"//gateway/asterisk/{0}.wav" , i.uniqueid)"></audio>
+                        <a class="btn btn-success" href=@string.Format(@"//gateway/asterisk/{0}.wav" , i.uniqueid) download><i class="fa fa-download"></i> Download</a>
+                    </div>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+@if (Model.PageViewModel.HasPreviousPage)
+{
+    <a asp-action="index" asp-route-page="@(Model.PageViewModel.PageNumber - 1)" class="btn btn-outline-dark">
+        <i class="fa fa-chevron-left"></i> Назад
+    </a>
+
+}
+@if (Model.PageViewModel.HasNextPage)
+{
+    <a asp-action="index" asp-route-page="@(Model.PageViewModel.PageNumber + 1)" class="btn btn-outline-dark">
+        Вперед
+        <i class="fa fa-chevron-right"></i>
+    </a>
+
+}

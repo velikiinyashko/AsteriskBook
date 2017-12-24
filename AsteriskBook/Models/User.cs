@@ -16,7 +16,7 @@ namespace AsteriskBook.Models
         public int Phone { get; set; }
         public string Path { get; set; }
 
-        public int? BooksId { get; set; }
+        public int? BookId { get; set; }
         public Book Books { get; set; }
 
         public int? RoleId { get; set; }

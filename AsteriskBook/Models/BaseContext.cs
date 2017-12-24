@@ -19,5 +19,6 @@ namespace AsteriskBook.Models
         public DbSet<Company> Companys { get; set; }
         public DbSet<Record> Records { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Cdr> cdr { get; set; }
     }
 }

@@ -10,7 +10,6 @@ namespace AsteriskBook.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public int? UsersId { get; set; }
         public User Users { get; set; }
 
         public List<Record> Records { get; set; }

@@ -15,10 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Asterisk\Controllers\" />
     <Folder Include="Areas\Asterisk\Data\" />
-    <Folder Include="Areas\Asterisk\Models\" />
-    <Folder Include="Areas\Asterisk\Views\" />
     <Folder Include="Areas\Cabinet\Data\" />
     <Folder Include="Areas\Cabinet\Models\" />
   </ItemGroup>
