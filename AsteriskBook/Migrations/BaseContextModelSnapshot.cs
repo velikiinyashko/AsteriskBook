@@ -32,6 +32,51 @@ namespace AsteriskBook.Migrations
                     b.ToTable("Books");
                 });
 
+            modelBuilder.Entity("AsteriskBook.Models.Cdr", b =>
+                {
+                    b.Property<DateTime>("calldate");
+
+                    b.Property<string>("accountcode");
+
+                    b.Property<int>("amaflags");
+
+                    b.Property<DateTime>("answer");
+
+                    b.Property<int>("billsec");
+
+                    b.Property<string>("channel");
+
+                    b.Property<string>("clid");
+
+                    b.Property<string>("dcontext");
+
+                    b.Property<string>("disposition");
+
+                    b.Property<string>("dst");
+
+                    b.Property<string>("dstchannel");
+
+                    b.Property<int>("duration");
+
+                    b.Property<DateTime>("end");
+
+                    b.Property<string>("lastapp");
+
+                    b.Property<string>("lastdata");
+
+                    b.Property<string>("src");
+
+                    b.Property<DateTime>("start");
+
+                    b.Property<string>("uniqueid");
+
+                    b.Property<string>("userfield");
+
+                    b.HasKey("calldate");
+
+                    b.ToTable("cdr");
+                });
+
             modelBuilder.Entity("AsteriskBook.Models.Company", b =>
                 {
                     b.Property<int>("Id")
